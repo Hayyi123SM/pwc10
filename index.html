@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document Object Model</title>
+</head>
+	<style type="text/css">
+		body{
+			font: 18px/18px avenir;
+		}
+
+		.container{
+		}
+
+		.title{
+			text-align: center;
+		}
+
+		.content{
+			width: 800px;
+			margin: 0px auto;
+		}
+
+		.card{
+			margin: 0;
+			flex-direction: column;
+			display: inline-flex;
+			width: 300px;
+			margin-left: 50px;
+		}
+
+		.card-head{
+			background-color: darkblue;
+			height: 60px;
+			color: white;
+			text-align: center;
+		}
+
+		.card-body{
+			border: 1px solid black;
+			padding: 20px;
+		}
+
+		.card-body img{
+			margin: 0px auto;
+			display: block;
+			width: 200px;
+			height: 300px;
+		}
+
+		.card-body input{}
+
+		.card-body .gif{
+			margin: 9px auto;
+			background: url("berjalan.png");
+			width: 148px;
+			height: 300px;
+			background-size: 750px 750px;
+			background-position: 0px -380px;
+			image-rendering: -webkit-optimize-contrast;
+		}
+
+		.toogle{
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			content: "nyala";
+			width: 70px;
+			height: 30px;
+			border-radius: 20px;
+			background-color: #707070;
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			transition: background-color ease 0.3s;
+		}
+
+		.toogle:before{
+			content: "Nyala Mati";
+			display: block;
+			position: absolute;
+			z-index: 2;
+			width: 25px;
+			height: 25px;
+			background-color: #fff;
+			left: 2px;
+			top: 2px;
+			border-radius: 50%;
+			text-indent: -50px;
+			word-spacing: 45px;
+			white-space: nowrap;
+			font:bold 12px/25px Helvetica;
+			color: #fff;
+			transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+		}
+
+		.toogle:checked{
+			background-color: #4CD964;
+		}
+		.toogle:checked:before{
+			left: 70px;
+		}
+	</style>
+<body>
+	<div class="container">
+		<div class="title">
+			<h1>BERMAIN DENGAN DOM HTML</h1>
+			<h3>untuk IoT dengan penggunaaan statement</h3>
+		</div>
+		<div class="content">
+			<div class="card">
+				<div class="card-head">
+					<h4>Kendali Lampu On/Off</h4>
+				</div>
+				<div class="card-body">
+					<input type="checkbox" id="toogle" class="toogle">
+					<img id="gambar" src="lampumati.png">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-head">
+					<h4>Kecepatan Bejalan</h4>
+				</div>
+				<div class="card-body">
+					<input type="range" id="range" value="0" min="0" max="4">
+					<span id="angka">0</span>
+					<div class="gif" id="gif"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+		//gambar bergerak
+		let range = document.getElementById("range");
+		let kecepatan = 200;
+		var x = 0;
+		var y = -50;
+		var gif, gif0, gif1, gif2, gif3, gif4, angka;
+		var opsigif = () => {
+			x -= 150;
+			if (x == -600) {
+				x = 0;
+				y -= 330;
+			}else{
+				if (y == -380) {
+					y = -50;
+				}
+			}
+
+			document.getElementById('gif').style.backgroundPositionX = String(x) + "px";
+			document.getElementById('gif').style.backgroundPositionY = String(y) + "px";
+
+			}
+
+		function cleargif(gif, gif0, gif1, gif2, gif3){
+			clearInterval(gif);
+			clearInterval(gif0);
+			clearInterval(gif1);
+			clearInterval(gif2);
+			clearInterval(gif3);
+		}
+
+	 	gif = setInterval(opsigif, kecepatan);
+
+		range.onchange = function(){
+			angka = document.getElementById('angka');
+			if(range.value == 1){
+				angka.innerHTML = '1';
+				cleargif(gif, gif0, gif2, gif3, gif4);
+				gif1 = setInterval(opsigif, 170);
+			}else if(range.value == 2){
+				angka.innerHTML = '2';
+				cleargif(gif, gif0, gif1, gif3, gif4);
+				gif2 = setInterval(opsigif, 140);
+			}else if(range.value == 3){
+				angka.innerHTML = '3';
+				cleargif(gif, gif0, gif1, gif2, gif4);
+				gif3 = setInterval(opsigif, 110);
+			}else if(range.value == 4){
+				angka.innerHTML = '4';
+				cleargif(gif, gif0, gif1, gif2, gif3);
+				gif4 = setInterval(opsigif, 80);
+			}else{
+				angka.innerHTML = '0';
+				cleargif(gif, gif1, gif2, gif3, gif4);
+				gif0 = setInterval(opsigif, 200);
+			}
+		}
+
+		//bohlam
+		let gambar = document.getElementById("gambar");
+		let toogle = document.getElementById('toogle');
+
+		toogle.onchange = function(){
+			if (toogle.checked) {
+				gambar.src = "lampunyala.png";
+			}else{
+				gambar.src = "lampumati.png";
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
