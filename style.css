@@ -6,7 +6,8 @@
 body{
 	font: 13px/18px sans-serif, arial;
 	background: url('sand.jpg');
-	background-size: 100% 100%;
+	background-size: cover;
+	/*background-repeat: no-repeat;*/
 	/*background-color: black;*/
 }
 
@@ -243,6 +244,28 @@ iframe{
 	text-align: center;
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
+}
+
+@media only screen and (max-width: 1024px){
+
+	/*body{
+		background: none;
+	}
+
+	.container{
+	width: 700px;
+	margin: 0;
+	}	
+
+	.head nav{
+	margin: 10px 10px;
+	margin-bottom: -3px;
+	margin-left: 25px;
+	display: none;
+	}*/
+
+
+
 }
 
 
