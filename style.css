@@ -1,0 +1,295 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font: 13px/18px sans-serif, arial;
+	background: url('sand.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*background-color: black;*/
+}
+
+.container{
+	width: 1024px;
+	margin: 25px auto;
+}
+
+/*.head{
+	border: 1px solid gray;
+}*/
+
+.head h1{
+	margin-top: 25px;
+	margin-left: 30px;
+	margin-bottom: 25px;
+	color: orange;
+}
+
+.head nav{
+	margin: 10px 10px;
+	margin-bottom: -3px;
+	margin-left: 25px;
+}
+
+.head nav ul li{
+	font-weight: bold;
+	display: inline-block;
+	margin: 0px 15px;
+	margin-right: -15px;
+	border: 3px solid #67a383;
+	/*box-shadow: 2px 2px gray;*/
+	padding: 10px 30px;
+	border-radius: 15px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	cursor: pointer;
+	background-color: #1b1bd1;
+	position: relative;
+	border-bottom: none;
+	color: whitesmoke;
+}
+
+.hov:hover{
+	background-color: salmon;
+}
+
+.head nav .nav1{
+	z-index: 1;
+}
+
+.content{
+	background-color: #cadae3;
+	border: 3px solid #67a383;
+	border-radius: 20px;
+	position: relative;
+	/*padding: 15px;*/
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.content .home img{
+	width: 100%;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+}
+
+.content .home h2{
+	margin-right: 30px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	text-align: right;
+	text-shadow: 2px 2px 2px 2px solid white;
+}
+
+.content .home h3, .content .home small{
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+.content .home p{
+	padding: 15px;
+}
+
+.content .pages .kotak{
+	width: 750px;
+	margin: 25px auto;
+	margin-bottom: 50px;
+}
+
+.content .pages .kotak .pict{
+	width: 350px;
+	height: 250px;
+	border: 1px solid black;
+	float: left;
+	margin-right: 20px;
+}
+
+button{
+	outline: none;
+	border: 1px solid gold;
+	padding: 5px;
+	cursor: pointer;
+	background-color: tomato;
+	color: cyan;
+	margin-top: 7px;
+	transition: .5s;
+	position: absolute;
+}
+
+button:hover{
+	background-color: salmon;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+iframe{
+	width: 350px;
+	height: 250px;
+}
+
+.content .pages .kotak .isi h2{
+	margin-bottom: 10px;
+}
+
+.content .pages .kotak .clear{
+	clear: left;
+}
+
+.content .about .box img{
+	width: 200px;
+	height: 250px;
+	border-radius: 50%;
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+	
+}
+
+.content .about .box{
+	width: 450px;
+	margin: 10px auto;
+	padding: 15px;
+	border: 1px solid gray;
+	border-radius: 30px;
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
+
+.content .about .box p{
+	padding-top: 25px;
+}
+
+.content .about .box .clear{
+	clear: left;
+}
+
+.content .other{
+	/*border: 1px solid black;*/
+}
+
+.card{
+	width: 250px;
+	/*height: 350px;	*/
+	border-radius: 35px;
+	background-color: salmon;
+	display: inline-block;
+	margin-left: 57px;
+	margin-top: 25px;
+	margin-bottom: 45px;
+	box-shadow: 1px 1px 1px 1px rgba(20,20,20,.3);
+	}
+
+.card .header{
+	background-color: #ccc;
+	padding: 5px 0px;
+	border-top-right-radius: 35px;
+	border-top-left-radius: 35px;
+}
+
+.card h2{
+	padding-left: 30px;
+	font-style: italic;
+}
+
+.card p{
+	padding: 20px;
+	margin-top: -2px;
+	color: #eee;
+	font-family: courier;
+}
+
+.subscrabe{
+	padding: 20px;
+	padding-left: 70px;
+	margin-bottom: 30px;
+}
+
+.subscrabe p{
+	width: 390px;
+	color: #585a5c;
+}
+
+.subscrabe .form input{
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 20px;
+	width: 250px;
+	background-color: #dfe1e6;
+	border-radius: 30px;
+	padding: 5px;
+	outline: none;
+}
+
+.form button{
+	padding: 5px;
+	border-radius: 30px;
+	background-color: blue;
+	border: none;
+	box-shadow: 0px 2px 2px black;
+	color: white;
+}
+
+.form button:active{
+	background-color: lightblue;
+	color: #454545;
+}
+
+
+.footer{
+	background-color: #121212;
+	color: white;
+	padding: 13px;
+	text-align: center;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+@media only screen and (max-width: 1024px){
+
+	/*body{
+		font: 30px/45px sans-serif;
+	}*/
+
+	.container{
+	width: 100%;
+	margin: 0;
+	}	
+
+	/*.head nav{
+	display: none;
+	}*/
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
